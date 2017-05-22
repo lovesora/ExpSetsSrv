@@ -1,0 +1,33 @@
+{
+  "name": "exp-sets-srv",
+  "version": "1.0.0",
+  "description": "the back-end of exp-sets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lovesora/ExpSetsSrv.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expsets"
+  ],
+  "author": "liuxin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lovesora/ExpSetsSrv/issues"
+  },
+  "homepage": "https://github.com/lovesora/ExpSetsSrv#readme",
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^7.1.1",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.30.4"
+  }
+}

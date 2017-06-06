@@ -1,5 +1,6 @@
 const Koa = require('koa');
-const cors = require('koa-cors')
+const cors = require('koa-cors');
+const send = require('koa-send');
 
 const controller = require('./configs/controllers.config.js');
 
@@ -18,6 +19,14 @@ app.use(async (ctx, next) => {
 });
 
 app.use(controller());
+
+app.use(async (ctx, next) => {
+    await send(ctx, ctx.path, {
+        root: __dirname,
+        immutable: true
+    });
+    await next();
+})
 
 app.listen(3000);
 

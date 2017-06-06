@@ -6,9 +6,14 @@ let signup = async (ctx, next) => {
         email = ctx.request.body.email || '',
         pw = ctx.request.body.pw || '';
 
-    let user = await User.create({ username, pw, email });
-
-    ctx.response.body = { user };
+    try {
+        let user = await User.create({ username, pw, email });
+        ctx.response.body = { user };
+    } catch (e) {
+        ctx.response.body = {
+            error: e.errors[0].message
+        };
+    }
 }
 
 let login = async (ctx, next) => {
@@ -16,11 +21,16 @@ let login = async (ctx, next) => {
         username = ctx.request.query.username || '',
         pw = ctx.request.query.pw || '';
 
-    let user = await User.findOne({
-        where: { username, pw}
-    });
-
-    ctx.response.body = { user };
+    try {
+        let user = await User.findOne({
+            where: { username, pw}
+        });
+        ctx.response.body = { user };
+    } catch (e) {
+        ctx.response.body = {
+            error: e.errors[0].message
+        };
+    }
 }
 
 let checkUsername = async (ctx, next) => {

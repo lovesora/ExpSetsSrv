@@ -10,7 +10,8 @@ let User = sequelize.define('user', {
     pw: Sequelize.STRING(45),
     email: Sequelize.STRING(45),
     birth: Sequelize.STRING(45),
-    male: Sequelize.BOOLEAN
+    is_male: Sequelize.BOOLEAN,
+    head_img: Sequelize.STRING(128)
 }, {
     timestamps: false,
     freezeTableName: true

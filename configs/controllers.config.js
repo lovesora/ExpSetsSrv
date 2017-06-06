@@ -36,6 +36,7 @@ function addControllers(router) {
         let mapping = require(path.resolve(ctlPath, f));
         addMapping(router, mapping);
     }
+    console.log(`process controller ending...`);
 }
 
 module.exports = function (dir) {

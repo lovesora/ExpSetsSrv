@@ -25,10 +25,13 @@
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-cors": "^0.0.16",
+    "koa-multer": "^1.0.1",
     "koa-router": "^7.1.1",
     "koa-send": "^4.1.0",
     "mysql": "^2.13.0",
+    "os": "^0.1.1",
     "path": "^0.12.7",
-    "sequelize": "^3.30.4"
+    "sequelize": "^3.30.4",
+    "uuid": "^3.0.1"
   }
 }

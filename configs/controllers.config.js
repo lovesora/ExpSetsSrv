@@ -16,6 +16,11 @@ function addMapping(router, mapping) {
             var path = url.substring(5);
             router.post(path, mapping[url]);
             console.log(`register URL mapping: POST ${path}`);
+        } else if (url.startsWith('PUT ')) {
+            // 如果url类似"PUT xxx":
+            var path = url.substring(4);
+            router.put(path, mapping[url]);
+            console.log(`register URL mapping: PUT ${path}`);
         } else {
             // 无效的URL:
             console.log(`invalid URL: ${url}`);
